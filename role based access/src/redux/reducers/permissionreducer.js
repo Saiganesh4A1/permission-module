@@ -1,6 +1,6 @@
 const initialState ={
     permissiondata:[{id:'1',permission:'CREATE',involvement:'VIEW'}],
-    nextId:6,
+    nextId:2,
 }
 
 const PermissionReducer = (state=initialState,action) =>{

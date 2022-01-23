@@ -67,10 +67,17 @@ const permisssions = useSelector(state=>state.permissionroot.permissiondata)
       navigate('/perm/create')
     }
 
-    const handleEditPermission = (permission) => {
-      navigate('/role/edit',{ state: permission })
+    // const handleEditPermission = (permission) => {
+    //   navigate('/role/edit',{ state: permission })
     
-    }
+    // }
+
+const handleEditPermission = (permission) => {
+
+  navigate('/perm/edit',{state:permission})
+}
+
+
     const handledeletePermission = (user) =>{
       dispatch(deletePermissionThunk(user))
 

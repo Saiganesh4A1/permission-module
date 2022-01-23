@@ -32,32 +32,6 @@ function EditRole() {
 
     return (
         <Box className="Box">
-        {/* <Paper  variant="outlined" elevation={8} square className={classes.paper}>
-            <form className='form' onSubmit={handleEditRoleSubmit}>
-                <h2>Edit Role</h2>
-              <TextField
-                onChange={e => setRoleName(e.target.value)}
-                value={roleName}
-                margin="dense"
-                label={"Role Name"}
-                // helperText="give two words(for avatar) - this is temporary"
-                className="textfield"
-                /><br></br>
-              <TextField
-                onChange={e => setRoleCode(e.target.value)}
-                value={roleCode}
-                margin="dense"
-                label={"Role Code"}
-                className="textfield"
-              /><br></br>
-              <br></br>
-                   {/* onClick={handleClick}  snackbar related */}
-                {/* <Box pt={2} >
-                 <center><Button  type="submit" variant="contained" color="primary" className='btn'>Edit</Button></center>
-                </Box>
-            </form> */}
-      
-        {/* </Paper> */}
         <div className="formC">
   		        <h2 className="title">
                 Edit Role

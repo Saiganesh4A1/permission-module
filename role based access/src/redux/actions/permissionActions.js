@@ -8,44 +8,47 @@ const incrementNextId = (nextId) => {
 }
 
 
-export const addPermissionThunk = (role) => {
-    const addPermission = (role) =>{
+export const addPermissionThunk = (permission) => {
+    const addPermission = (permission) =>{
         return{
             type:'ADD_PERMISSION',
-            payload:role
+            payload:permission
         }
     }  
 
     return dispatch =>{
-        dispatch(addPermission(role))
-        dispatch(incrementNextId(role.id))
-        dispatch(showSuccessSnackbar(`${role.permission} was created successfully!`))
+        dispatch(addPermission(permission))
+        dispatch(incrementNextId(permission.id))
+        // dispatch(showSuccessSnackbar(`${permission} was created successfully!`))
+        dispatch(showSuccessSnackbar(`Added successfully!`))
     }
 }
 
-export const deletePermissionThunk = (role) => {
-    const deletePermission = (role) =>{
+export const deletePermissionThunk = (permission) => {
+    const deletePermission = (permission) =>{
         return{
             type:'DELETE_PERMISSION',
-            payload:role.id
+            payload:permission.id
         }
     }
     return dispatch =>{
-        dispatch(deletePermission(role))
-        dispatch(showSuccessSnackbar(`${role.permission} was deleted!`,'error'))
+        dispatch(deletePermission(permission))
+        // dispatch(showSuccessSnackbar(`${role.permission} was deleted!`,'error'))
+        dispatch(showSuccessSnackbar(`Deleted successfully..`))
     }
 }
 
-export const editPermissionThunk = (role) => {
-    const editPermission = (role) =>{
+export const editPermissionThunk = (permission) => {
+    const editPermission = (permission) =>{
         return{
             type:'EDIT_PERMISSION',
-            payload:role
+            payload:permission
         }
     }
 
     return dispatch => {
-        dispatch(editPermission(role))
-        dispatch(showSuccessSnackbar(`${role.permission} Role edited successfully!`))
+        dispatch(editPermission(permission))
+        // dispatch(showSuccessSnackbar(`${role.permission} Role edited successfully!`))
+        dispatch(showSuccessSnackbar(`  edited successfully!`))
     }
 }

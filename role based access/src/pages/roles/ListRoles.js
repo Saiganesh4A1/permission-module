@@ -50,7 +50,8 @@ function ListRoles() {
     }, [toogleState])
 
     const handleOpenModal = (role) =>{
-      roleDetail=role;
+      // roleDetail=role; --when we are commenting this we don't get userName value and usercode.
+      roleDetail = role;
       setOpen(true);
     }
 
@@ -70,10 +71,12 @@ function ListRoles() {
       dispatch(deleteRoleThunk(user))
     }
 
+    //   MTable element -- userColumn="true" ---when i comment users icons and data will disappear
+
     return (
       <div className={`roles ${classes.listroles}`} >
-           <MTable columns={columns} datas={roles} label="ROLES" searchLabel="Search Roles" edit={handleEditRole} add={addRole} deleteAction={handledeleteRole} view={handleOpenModal}  userColumn="true"  />
-           <UserCard open={open} handleClose={handleCloseModal} user={roleDetail} />
+           <MTable columns={columns} datas={roles} label="ROLES" searchLabel="Search Roles" edit={handleEditRole} add={addRole} deleteAction={handledeleteRole} view={handleOpenModal} userColumn="true"   />
+           <UserCard open={open} handleClose={handleCloseModal} user={roleDetail}  />
         </div>
     )
 }
