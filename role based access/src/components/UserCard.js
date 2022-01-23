@@ -1,0 +1,99 @@
+import React, { useState } from 'react'
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
+const style = {
+    modal:{
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 300,
+        bgcolor: 'background.paper',
+        boxShadow: 24,
+        p: 4,
+        padding:'0px',
+        outline:'none'
+    },
+    upper:{
+        height: '120px',
+        background: '#7F00FF'
+    },
+    imageCont:{
+        background:'#fff',
+        width: '100px',
+        height: '100px',
+        borderRadius: '50%',
+        transform: 'translate(100px,70px)'
+    },
+    lower:{
+        height: 'auto',
+        backgroundColor: '#FFF',
+        padding: '20px',
+        paddingTop: '40px',
+        textAlign: 'center'
+    },
+    title:{
+        marginTop:'30px',
+        'h3':{
+            boxSizing: 'border-box',
+            lineHeight: '.6',
+            fontWeight: 'bolder',
+            marginBottom:'10px'
+        },  
+        'h4':{
+            color: '#444444',
+            opacity: '.6',
+            fontWeight: 'bold'
+        }
+
+    },
+    content:{
+        textAlign:'left',
+        padding:'20px',
+        'h3':{
+            fontWeight:'lighter',
+            fontSize:'18px',
+            lineHeight:'1.6'
+        }
+    }
+ 
+};
+
+function UserCard({open,handleClose,user,role}) {
+
+    
+    return (
+        <div key={user.id}>
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box sx={style.modal}>
+                    <Box sx={style.upper}>
+                        <Box sx={style.imageCont}>
+                            {/* <img src={profile} alt="profile" style={{width:'100px',height:'100px',borderRadius:'50%'}} /> */}
+                            <AccountCircleIcon style={{width:'100px',height:'100px',borderRadius:'50%'}} />
+                        </Box>
+                    </Box>
+                    <Box sx={style.lower}>
+                        <Box sx={style.title}>
+                            <h3>{user.name}</h3>
+                            {role && <h4>{role}</h4>}
+                        </Box>
+                        <Box sx={style.content}>
+                            <h3><strong>User Code</strong> {" "} :{" "}{user.userCode}</h3>
+                            <h3><strong>user Name</strong>{" "}:{" "}{user.name}</h3>
+                            {role && <h3><strong>Role</strong>{" "}:{" "}{role}</h3>}
+                        </Box>
+                    </Box>
+                </Box>
+            </Modal>
+        </div>
+    )
+}
+
+export default UserCard

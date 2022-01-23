@@ -1,0 +1,22 @@
+.edit-asset {
+  position: relative;
+  align-items: center;
+  height: calc(100vh - 60px);
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  /* background: #f44336; */
+}
+.paper {
+  padding: 50px;
+}
+h2 {
+  text-align: center;
+}
+.textfield {
+  margin-bottom: 20px;
+}
+.btn {
+  justify-items: center;
+  margin-top: 20px;
+}

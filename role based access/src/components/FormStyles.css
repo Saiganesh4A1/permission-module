@@ -1,0 +1,104 @@
+.Box {
+  position: relative;
+  align-items: center;
+  height: calc(100vh - 60px);
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  /* background: #f44336; */
+}
+.paper {
+  padding: 50px;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+/* .btn {
+  justify-items: center;
+  margin-top: 20px;
+} */
+
+form p {
+  color: #bf1650;
+}
+
+form p::before {
+  display: inline;
+  content: "⚠ ";
+}
+/* Neumorphism styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --font-color: #48525c;
+  --themeC: #2962ff;
+  --body-bg: #f6f6f6;
+}
+.Box {
+  color: var(--font-color);
+  background: var(--body-bg);
+  font-family: sans-serif;
+}
+div.formC {
+  width: 400px;
+  max-width: 86%;
+  min-height: 500px;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: -6px 2px 26px #18181800, inset 0px 0px 5px 8px #ffffff,
+    inset 8px -9px 6px -5px #ffffff1f, inset -7px 10px 6px -5px #13131336,
+    5px -5px 26px #5e5e5e1f;
+  background: var(--bodyB);
+  margin: 10vh auto;
+  overflow: hidden;
+}
+div.formC > .title {
+  text-align: center;
+  margin: 3rem auto;
+}
+div.formC > form {
+  display: block;
+}
+div.formC > form > input,
+div.formC > form > button {
+  outline: none;
+  border: none;
+  display: block;
+  font-size: 1rem;
+  margin: 2rem auto;
+}
+div.formC > form > input {
+  width: 100%;
+  height: 3rem;
+  padding: 0 1rem;
+  color: var(--font-color);
+  border-radius: 2rem;
+  background: var(--bodyB);
+  box-shadow: inset 3px 3px 7px rgb(187 187 187 / 48%),
+    inset -6px -6px 7px #ffffff;
+}
+div.formC > form > input:focus {
+  box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
+}
+div.formC > form > input::placeholder {
+  font-size: 80%;
+}
+div.formC > form > button {
+  cursor: pointer;
+  padding: 0.6rem 1.4rem;
+  width: 100%;
+  text-align: center;
+  border-radius: 2rem;
+  color: white;
+  background: var(--themeC);
+  box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
+}
+div.formC > form > button:hover {
+  opacity: 90%;
+}

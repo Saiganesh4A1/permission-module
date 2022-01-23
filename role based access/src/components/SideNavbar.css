@@ -1,0 +1,232 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 260px;
+  background: #22232d;
+  z-index: 100;
+  transition: all 0.5s ease;
+}
+
+.sidebar.close {
+  width: 68px;
+  height: 100%;
+}
+
+.sidebar .logo-details {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background: #3c8dbc;
+}
+
+.sidebar .logo-details .ri-logo {
+  font-size: 20px;
+  color: #fff;
+  height: 30px;
+  min-width: 68px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.sidebar .logo-details .logo_name {
+  font-size: 30px;
+  text-align: center;
+  padding-left: 50px;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s ease;
+  transition-delay: 0.1s;
+}
+
+.sidebar.close .logo-details .logo_name {
+  transition-delay: 0s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar .nav-links {
+  height: 100%;
+  padding: 0px 0 150px 0;
+  overflow: auto;
+}
+
+.sidebar.close .nav-links {
+  overflow: visible;
+}
+
+/* .sidebar .nav-links::-webkit-scrollbar {
+  display: none;
+} */
+
+.sidebar .nav-links li {
+  position: relative;
+  list-style: none;
+  transition: all 0.4s ease;
+}
+.sidebar .nav-links li:hover {
+  background: #1d1b31;
+}
+.sidebar .nav-links li .iocn-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar.close .nav-links li .iocn-link {
+  display: block;
+}
+
+.sidebar .nav-links li .arrow {
+  height: 25px;
+  min-width: 68px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sidebar .nav-links li .ri-icons {
+  height: 30px;
+  padding: 5px 0px;
+  min-width: 68px;
+  text-align: center;
+  line-height: 20px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sidebar .nav-links li.showMenu .arrow {
+  transform: rotate(-180deg);
+}
+.sidebar.close .nav-links .arrow {
+  display: none;
+}
+.sidebar .nav-links li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 10px 0;
+}
+.sidebar .nav-links li a .link_name {
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  transition: 0.3s ease;
+  transition-delay: 0.1s;
+  /* display: none; */
+}
+.sidebar.close .nav-links li a .link_name {
+  transition-delay: 0s;
+  opacity: 0;
+  pointer-events: none;
+  color: #11101d;
+  font-size: 5px;
+}
+.sidebar .nav-links li .sub-menu {
+  padding: 6px 6px 14px 80px;
+  margin-top: -10px;
+  background: #0f0e1d;
+  display: none;
+}
+.sidebar .nav-links li.showMenu .sub-menu {
+  margin-top: 2px;
+  display: block;
+}
+.sidebar .nav-links li .sub-menu a {
+  color: #fff;
+  font-size: 15px;
+  padding: 5px 0;
+  white-space: nowrap;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+.sidebar .nav-links li .sub-menu a:hover {
+  opacity: 1;
+}
+.sidebar.close .nav-links li .sub-menu {
+  position: absolute;
+  left: 100%;
+  top: -10px;
+  margin-top: 0;
+  padding: 10px 20px;
+  border-radius: 0 6px 6px 0;
+  opacity: 0;
+  display: block;
+  pointer-events: none;
+  transition: 0s;
+}
+.sidebar.close .nav-links li:hover .sub-menu {
+  top: 0;
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+}
+.sidebar .nav-links li .sub-menu .link_name {
+  display: none;
+}
+.sidebar.close .nav-links li .sub-menu .link_name {
+  font-size: 18px;
+  opacity: 1;
+  display: block;
+}
+.sidebar .nav-links li .sub-menu.blank {
+  opacity: 1;
+  pointer-events: auto;
+  padding: 5px 20px 8px 16px;
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar .nav-links li:hover .sub-menu.blank {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.home-content {
+  position: relative;
+  background: #e4e9f7;
+  left: 260px;
+  width: calc(100% - 260px);
+  transition: all 0.5s ease;
+  height: 60px;
+  display: flex;
+  /* align-items: center; */
+}
+.sidebar.close ~ .home-content {
+  left: 68px;
+  width: calc(100% - 68px);
+}
+
+.home-content .menu {
+  color: #ffffff;
+  font-size: 25px;
+}
+.home-content .menu {
+  margin: 0 25px 0 0px;
+  cursor: pointer;
+}
+@media (max-width: 420px) {
+  .sidebar.close .nav-links li .sub-menu {
+    display: none;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .home-content {
+    width: 100%;
+    left: 0px;
+    position: relative;
+  }
+  .sidebar.close ~ .home-content {
+    left: 0px;
+    width: 100%;
+  }
+}

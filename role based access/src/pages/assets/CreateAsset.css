@@ -1,0 +1,55 @@
+/* .create-asset{
+    position:relative;
+    align-items: center;
+    padding:30px;
+    display: flex;
+    justify-content: center;
+}
+
+h4{
+    text-align: center;
+}
+
+.asset, .previlege{
+    width:450px;
+}
+
+.previlege{
+    margin-top: 50px;
+}
+
+.btns{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.form-group{
+    margin-bottom: 30px;
+}
+
+
+.asset-entity .close{
+    display:none;
+} */
+.create-asset {
+  position: relative;
+  align-items: center;
+  height: calc(100vh - 60px);
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+.paper {
+  padding: 50px;
+}
+h2 {
+  text-align: center;
+}
+.textfield {
+  margin-bottom: 20px;
+}
+.btn {
+  justify-items: center;
+  margin-top: 20px;
+}

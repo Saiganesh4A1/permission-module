@@ -1,0 +1,39 @@
+.createrole{
+    position:relative;
+    align-items: center;
+    height: calc(100vh - 60px);
+    padding:30px;
+    display: flex;
+    justify-content: center;
+    background: #e2e2e2;
+}
+
+h4{
+    text-align: center;
+    font-size: 30px;
+}
+
+.role-form{
+    background: #fff;
+    padding: 20px;
+    width:450px;
+    border-top: 5px solid #097193;
+}
+
+.btns{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.form-group input:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.btns button:focus{
+    box-shadow: none;
+}
+
+.form-group{
+    margin-bottom: 30px;
+}
