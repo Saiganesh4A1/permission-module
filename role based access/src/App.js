@@ -18,6 +18,7 @@ import MenuPrivilege from './pages/assets/MenuPrivilege';
 import Listpermissions from './pages/permissions/listpermissions';
 import Createperm from './pages/permissions/createperm';
 import EditPermission from './pages/permissions/EditPermission';
+import Addperm from './pages/Addperm';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             <Route path="/" element={<><SideNavbar /> </>} />
             <Route path="/roles" element={<><SideNavbar /> <ListRoles /></>} />
             <Route path="/permission" element={<><SideNavbar/><Listpermissions/></>}></Route>
+            <Route path="/perm/addperm" element={<><SideNavbar/><Addperm/></>}></Route>
             <Route path='/perm/create' element={<><SideNavbar/><Createperm/></>}></Route>
             <Route path="/perm/edit" element={<><SideNavbar/><EditPermission/></>}></Route>
             <Route exact path="/role/users" element={<><SideNavbar /> <UsersRole /></>} />

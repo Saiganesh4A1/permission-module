@@ -71,11 +71,11 @@ function ListRoles() {
       dispatch(deleteRoleThunk(user))
     }
 
-    //   MTable element -- userColumn="true" ---when i comment users icons and data will disappear
+    //   MTable element -- userColumn="true" not only true userColumn="false" also working ---when i comment users icons and data will disappear
 
     return (
       <div className={`roles ${classes.listroles}`} >
-           <MTable columns={columns} datas={roles} label="ROLES" searchLabel="Search Roles" edit={handleEditRole} add={addRole} deleteAction={handledeleteRole} view={handleOpenModal} userColumn="true"   />
+           <MTable columns={columns} datas={roles} label="ROLES" searchLabel="Search Roles" edit={handleEditRole} add={addRole} deleteAction={handledeleteRole} view={handleOpenModal} userColumn="true"  />
            <UserCard open={open} handleClose={handleCloseModal} user={roleDetail}  />
         </div>
     )

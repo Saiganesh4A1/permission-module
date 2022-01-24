@@ -1,5 +1,8 @@
+
+// permissiondata:[{id:'1',permission:'CREATE',involvement:'VIEW'}] ,involvement:'VIEW'
+
 const initialState ={
-    permissiondata:[{id:'1',permission:'CREATE',involvement:'VIEW'}],
+    permissiondata:[{id:'1',permission:'CREATE'}],
     nextId:2,
 }
 
@@ -30,7 +33,7 @@ const PermissionReducer = (state=initialState,action) =>{
                     // role.rolecode=action.payload.rolecode
                     // role.name = action.payload.name
                     permission.permission=action.payload.permission
-                    permission.involvement=action.payload.involvement
+                    // permission.involvement=action.payload.involvement
                 }
                 return state
             })

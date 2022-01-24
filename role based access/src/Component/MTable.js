@@ -4,7 +4,7 @@ import Tooltip from '@mui/material/Tooltip';
 import SearchInput from './SearchInput';
 import TableSortLabel from '@mui/material/TableSortLabel';
 import PersonIcon from '@mui/icons-material/Person';
-import AddIcon from '@mui/icons-material/Add';
+// import AddIcon from '@mui/icons-material/Add';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -178,9 +178,8 @@ function descendingComparator(a, b, orderBy) {
   return 0;
 }
 
-//in mtable i'm adding addData
 
-function MTable({ columns, datas, label, searchLabel, edit, add, deleteAction, userColumn, view, dropDown, uploadButton,addData }) {
+function MTable({ columns, datas, label, searchLabel, edit, add, deleteAction, userColumn, view, dropDown, uploadButton }) {
   const classes = useStyles();
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
@@ -274,10 +273,10 @@ function MTable({ columns, datas, label, searchLabel, edit, add, deleteAction, u
                 ))
               }
               <TableCell className={classes.tableHeaderCell} >Action</TableCell>
-              {
-                userColumn && <TableCell className={classes.tableHeaderCell} >Users</TableCell>
-              }
-              <TableCell className={classes.tableHeaderCells} style={{fontSize:'18px'}}>Involvement</TableCell>
+              {/* {
+                // userColumn && <TableCell className={classes.tableHeaderCell} >Users</TableCell>
+              } */}
+              <TableCell className={classes.tableHeaderCells}>Involvement</TableCell>
             </TableRow>
           </TableHead>
           <TableBody >
@@ -321,11 +320,8 @@ function MTable({ columns, datas, label, searchLabel, edit, add, deleteAction, u
                     {/* <Tooltip title="View" placement='top' arrow onClick={() => view(rowData)}>
                     <span><PersonIcon style={{ color: 'green', fontSize: '30px' }} className={classes.tooltip} /></span>
                     </Tooltip> */}
-                    {/* <Tooltip title="Add Data" placement='top' arrow onClick={()=>add(rowData)}>
-                      <span><AddCircleIcon style={{color:'blue',fontSize:'30px'}} className={classes.tooltip} /></span>
-                    </Tooltip> */}
-                    <Tooltip title="Add" placement='top' arrow onClick={()=>addData()}>
-                      <span><AddCircleIcon style={{color:'blue',fontSize:'30px'}} className={classes.tooltip} /></span>
+                    <Tooltip title="Add" placement='top' arrow onClick={()=>add(rowData)}>
+                      <span><AddCircleIcon style={{color:'green',fontSize:'30px'}} className={classes.tooltip} /></span>
                     </Tooltip>
                     <Tooltip title="Edit" placement='top' arrow onClick={() => edit(rowData)}>
                       <span><EditIcon style={{ color: 'orange', fontSize: '30px' }} className={classes.tooltip} /></span>
@@ -333,9 +329,9 @@ function MTable({ columns, datas, label, searchLabel, edit, add, deleteAction, u
                     <Tooltip title="Delete" placement='top' arrow onClick={() => deleteAction(rowData)} >
                       <span><DeleteIcon style={{ color: "red", fontSize: '30px' }} className={classes.tooltip} /></span>
                     </Tooltip>
-                  </TableCell>   
+                  </TableCell>
                   {
-                    userColumn && <TableCell ><SupervisedUserCircleIcon style={{ fontSize: '38px', color: '#1976d2', cursor: 'pointer' }} onClick={() => navigate('/role/users',{state:{selectedRole:rowData.name}})} /></TableCell>
+                    userColumn && <TableCell ><SupervisedUserCircleIcon style={{ fontSize: '38px', color: '#1976d2', cursor: 'pointer' }} onClick={() => navigate('/role/users', { state: { selectedRole: rowData.name } })} /></TableCell>
                   }
                   <TableCell>
                       <Tooltip title="View" placement='top' arrow onClick={()=>view(rowData)}>

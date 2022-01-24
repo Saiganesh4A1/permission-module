@@ -30,7 +30,7 @@ function EditPermission(){
     
     const onSubmit = (data, event) => {
       event.preventDefault()
-      dispatch(editPermissionThunk({'id':Id,'permission':data.permission,"involvement":data.involvement}))
+      dispatch(editPermissionThunk({'id':Id,'permission':data.permission}))
       navigate('/permission')
     }
 
@@ -65,7 +65,7 @@ function EditPermission(){
           <form onSubmit={handleSubmit(onSubmit)}>
           <FormInputText 
                 name="permission"    
-                label="PERMISSION"
+                label="Permission"
                 register = {{...register("permission",{required:true,minLength:1,maxLength:8, pattern:/^[a-zA-Z0-9]+$/})}}
               />
              {errors?.permission?.type === "required" && <p>Permission is required</p>}
@@ -78,18 +78,18 @@ function EditPermission(){
              {errors?.permission?.type === "pattern" && (
                 <p>No spaces allowed!</p>
               )}
-            <FormInputText 
+            {/* <FormInputText 
                 name="involvement"    
-                label="xyz"
+                label="INVOLVEMENT"
                 register = {{...register("involvement",{required:true, maxLength:8, pattern:/^[a-zA-Z ]*$/})}}
               />
-              {errors?.involvement?.type === "required" && <p>abc is required</p>}
+              {errors?.involvement?.type === "required" && <p>involvement is required</p>}
               {errors?.involvement?.type === "maxLength" && (
                 <p>involvement cannot exceed 8 characters</p>
               )}
               {errors?.involvement?.type === "pattern" && (
                 <p>Alphabetical characters only</p>
-              )}
+              )} */}
             
             <button>Edit</button>
           </form>

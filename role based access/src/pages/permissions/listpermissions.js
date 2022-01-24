@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import {deletePermissionThunk} from '../../redux/actions/permissionActions';
 import MTable from '../../components/MTable'
 import { makeStyles } from '@material-ui/core/styles';
+import PermissionCard from '../../components/PermissionCard';
 // import UserCard from '../../components/UserCard'
 
 
@@ -21,6 +22,8 @@ const useStyles = makeStyles((theme)=>({
 
 // let roleDetail ={}
 
+let permissionDetails = {}
+
 function ListRoles() {
 
   
@@ -36,9 +39,9 @@ const permisssions = useSelector(state=>state.permissionroot.permissiondata)
 
 //   const [open, setOpen] = useState(false);
 
-
+// const columns=[{id:'permission',label:'Permission'},{id:'involvement',label:'Involvement'}] -- remove ,{id:'involvement',label:'Involvement'} part from this
   
-  const columns=[{id:'permission',label:'Permission'},{id:'involvement',label:'Involvement'}] // id:'name' -->name is a dummy data column id of permreducer
+  const columns=[{id:'permission',label:'Permission'}] // id:'permission' -->name is a dummy data column id of permreducer
 
     useEffect(() => {
         let cls=document.getElementsByClassName('roles')[0];
@@ -59,6 +62,17 @@ const permisssions = useSelector(state=>state.permissionroot.permissiondata)
     //   setOpen(true);
     // }
 
+    const [open, setOpen] = useState(false);
+
+    const handleOpenModal = (permission) =>{
+      permissionDetails=permission;
+      setOpen(true);
+    }
+
+    const handleCloseModal = () =>{
+      setOpen(false)
+    }
+
     // const handleCloseModal = () =>{
     //   setOpen(false)
     // }
@@ -77,18 +91,21 @@ const handleEditPermission = (permission) => {
   navigate('/perm/edit',{state:permission})
 }
 
+const handleAdd = () => navigate('/perm/addperm')
+
 
     const handledeletePermission = (user) =>{
       dispatch(deletePermissionThunk(user))
 
     }
 
-    //MTable element -- view={handleOpenModal}  userColumn="true"
+    //MTable element -- view={handleOpenModal}  userColumn="true" // add={addPermission}
 
     return (
-      <div className={`roles ${classes.listroles}`} >
-           <MTable columns={columns} datas={permisssions} label="PERMISSIONS" searchLabel="Search Permission" edit={handleEditPermission} add={addPermission} deleteAction={handledeletePermission}  />
+      <div className={`roles ${classes.listroles}`} >   
+           <MTable columns={columns} datas={permisssions} label="PERMISSIONS" searchLabel="Search Permission" add={addPermission}  edit={handleEditPermission} addData={handleAdd}  deleteAction={handledeletePermission} view={handleOpenModal} />
            {/* <UserCard open={open} handleClose={handleCloseModal} user={roleDetail} /> */}
+           <PermissionCard open={open} handleClose={handleCloseModal} permission={permissionDetails} />
         </div>
     )
 }

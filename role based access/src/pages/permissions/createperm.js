@@ -28,7 +28,8 @@ function Createperm(){
     const onSubmit = (data,e) => {
         e.preventDefault()
         // console.log(data)
-        dispatch(addPermissionThunk({"id":nextId,"permission":data.permission,"involvement":data.involvement}))
+        // dispatch(addPermissionThunk({"id":nextId,"permission":data.permission,"involvement":data.involvement}))
+        dispatch(addPermissionThunk({"id":nextId,"permission":data.permission}))
         //   navigate('/roles')
         navigate('/permission')
       };
@@ -42,7 +43,7 @@ function Createperm(){
               <form onSubmit={handleSubmit(onSubmit)}>
               <FormInputText 
                     name="permission"    
-                    label="PERMISSION"
+                    label="Permission"
                     register = {{...register("permission",{required:true,minLength:1,maxLength:8, pattern:/^[a-zA-Z0-9]+$/})}}
                   />
                  {errors?.permission?.type === "required" && <p>Permission is required</p>}
@@ -55,7 +56,7 @@ function Createperm(){
                  {errors?.permission?.type === "pattern" && (
                     <p>No spaces allowed!</p>
                   )}
-                <FormInputText 
+                {/* <FormInputText 
                     name="involvement"    
                     label="Involvement"
                     register = {{...register("involvement",{required:true, maxLength:8, pattern:/^[a-zA-Z ]*$/})}}
@@ -66,7 +67,7 @@ function Createperm(){
                   )}
                   {errors?.involvement?.type === "pattern" && (
                     <p>Alphabetical characters only</p>
-                  )}
+                  )} */}
                 
                 <button>Create</button>
               </form>
